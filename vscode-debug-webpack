@@ -1,0 +1,26 @@
+{    
+		"version": "0.2.0",
+    "configurations": [
+			{
+            "name": "webpackdebug",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/dist/server.js/",
+            "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "restart": true,
+            "envFile": "${workspaceFolder}/.env",
+            "runtimeExecutable": "nodemon",
+            "args": ["--inspect"],
+            "autoAttachChildProcesses": true,
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${workspaceFolder}/src/node_modules/*",
+                "webpack://?:*/*": "${workspaceFolder}/src/*"
+            },
+            "trace": true,
+            "webRoot": "${workspaceRoot}",
+            "stopOnEntry": false
+        },  
+			]
+	}
